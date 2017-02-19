@@ -1,3 +1,351 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td \{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+\}
 
+body \{
+    line-height: 1;
+
+    font-family: "microsoft yahei",Arial,Helvetica,sans-serif;
+    font-size: 100%;
+    background: #fff;
+    color: #817c7c;
+    line-height: 1.5;
+\}
+
+* \{
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+\}
+
+.container \{
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    line-height: 1.8;
+\}
+
+.article-content \{
+    padding: 1.5em 4% 5em;
+    color: #413f3f;
+    font-size: 100%;
+\}
+
+caption,th,td \{
+    text-align: left;
+    font-weight: normal;
+    vertical-align: middle;
+\}
+
+a img \{
+    border: none;
+\}
+
+small \{
+    font-size: 80%;
+\}
+
+sub,sup \{
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+\}
+
+sup \{
+    top: -.5em;
+    padding-left: .3em;
+\}
+
+sub \{
+    bottom: -.25em;
+\}
+
+a \{
+    text-decoration: none;
+    color: #2ca6cb;
+\}
+
+a:hover \{
+    color: #d14;
+\}
+
+h1 \{
+    font-size: 200%;
+    line-height: 1.5em;
+    padding-bottom: .3em;
+    border-bottom: 2px solid #dbdbdb;
+\}
+
+h2 \{
+    padding-left: 20px;
+    font-size: 160%;
+    line-height: 1.2em;
+    border-left: 4px solid #2ca6cb;
+\}
+
+h3 \{
+    font-size: 150%;
+    line-height: 1em;
+    margin-top: 1.3em;
+\}
+
+h1, h2 \{
+    position: relative;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+\}
+
+h4, h5, h6 \{
+    font-size: 130%;
+\}
+
+h1, h2, h3, h4, h5, h6 \{
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+\}
+
+h1 >code, h2 >code, h3 >code, h4 >code, h5 >code, h6 >code \{
+    color: #a3a3a3;
+\}
+
+hr \{
+    border: 1px solid #dbdbdb;
+\}
+
+strong \{
+    font-weight: bold;
+\}
+
+em \{
+    font-style: italic;
+\}
+
+acronym, abbr \{
+    border-bottom: 1px dotted;
+\}
+
+blockquote \{
+    border-left: .2em solid #aaa;
+    margin: 1em;
+    padding: .7em;
+    line-height: 1.5;
+    font-size: 100%;
+    color: #808080;
+    background-color: #f8f8f8;
+\}
+
+blockquote footer \{
+    background: #fafafa;
+    padding: 0;
+    margin: 0;
+    font-size: 80%;
+    line-height: 1em;
+\}
+
+blockquote cite \{
+    font-style: italic;
+    padding-left: .5em;
+\}
+
+blockquote p \{
+    margin: 0;
+\}
+
+ul, ol \{
+    list-style: none;
+    padding-left: 3em;
+    font-size: 105%;
+    padding-top: .7em;
+\}
+
+ul li \{
+    list-style: disc;
+    text-align: match-parent;
+\}
+
+ol li \{
+    list-style-type: decimal;
+\}
+
+dl dt \{
+    font-weight: blod;
+\}
+
+ul li>code, ol li>code, p code, strong code, em code, table th>code, table td>code \{
+    font-family: Monaco,Menlo,Consolas,Courier New,monospace;
+    background: #eee;
+    color: #d14;
+    border: 1px solid #d6d6d6;
+    padding: 0 5px;
+    margin: 0 2px;
+    font-size: 90%;
+    white-space: nowrap;
+    text-shadow: 0 1px #fff;
+    -webkit-border-radius: .25em;
+    -webkit-border-radius: .25em;
+    border-radius: .25em;
+\}
+
+p \{
+    line-height: 1.5;
+    margin-top: .7em;
+    font-size: 110%;
+    letter-spacing: 1px;
+\}
+
+p.image-wrapper \{
+    text-align: center;
+\}
+
+img, video, figure img \{
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    margin-top: .5em;
+
+    border-radius: 5px;
+    box-shadow: 2px 2px 7px 1px #aaa;
+\}
+
+table \{    
+    vertical-align: middle;
+    max-width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 1em;
+    border: 2px solid #cbcbcb;
+    color: #413f3f;
+\}
+
+table tbody tr:nth-child(odd) \{
+    background-color: #f8f8f8;
+\}
+
+table th \{
+    font-weight: bold;
+    border: 1px solid #cbcbcb;
+    border-bottom: 2px solid #cbcbcb;
+    padding: .8em;
+    line-height: 1.3em;
+\}
+
+table td \{
+    border: 1px solid #cbcbcb;
+    padding: .8em;
+    line-height: 1.3em;
+\}
+
+pre \{
+    background: #2d2d2d;
+    margin: .5em 0;
+    padding: .5em 2%;
+    color: #ccc;
+    line-height: 1.5;
+    font-size: .8em;
+    -webkit-border-radius: .35em;
+    -webkit-border-radius: .35em;
+    border-radius: .35em;
+    word-wrap: break-word;
+    font-family: Monaco,Menlo,Consolas,Courier New,monospace;
+    overflow-x: auto;
+\}
+
+
+pre::-webkit-scrollbar, pre::-webkit-scrollbar-track \{
+    height: 8px;
+    background-color: transparent;
+\}
+pre::-webkit-scrollbar-thumb \{
+    height: 8px;
+    background-color: #ddd;
+    border-radius: 4px;
+\}
+
+
+.hljs \{
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+\}
+
+.hljs-comment,
+.hljs-quote \{
+  color: #5c6370;
+  font-style: italic;
+\}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula \{
+  color: #c678dd;
+\}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst \{
+  color: #e06c75;
+\}
+
+.hljs-literal \{
+  color: #56b6c2;
+\}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string \{
+  color: #98c379;
+\}
+
+.hljs-built_in,
+.hljs-class .hljs-title \{
+  color: #e6c07b;
+\}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number \{
+  color: #d19a66;
+\}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title \{
+  color: #61aeee;
+\}
+
+.hljs-emphasis \{
+  font-style: italic;
+\}
+
+.hljs-strong \{
+  font-weight: bold;
+\}
+
+.hljs-link \{
+  text-decoration: underline;
+\}
 
 ${css}

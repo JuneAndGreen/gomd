@@ -18,6 +18,7 @@ npm install -g gomd
     -v, --version                输出版本信息
     -w, --watch                  监听markdown文件变化
     -c <cssPath>                 自定义样式
+    -o <htmlPath>                自定义输出文件
 ```
 
 直接将markdown文件转为html文件：
@@ -26,10 +27,10 @@ npm install -g gomd
 gomd ./my.md
 ```
 
-监听markdown文件变化，同时指定自定义样式
+监听markdown文件变化，同时指定自定义样式和自定义输出文件
 
 ```bash
-gomd ./my.md -w -c ./my.css
+gomd ./my.md -w -c ./my.css -o ./my.html
 ```
 
 ## 协议

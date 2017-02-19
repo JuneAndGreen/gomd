@@ -1,0 +1,495 @@
+</DOCTYPE html>
+<html>
+<head>
+    <title>demo</title>
+    <style type="text/css">
+        html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body {
+    line-height: 1;
+
+    font-family: "microsoft yahei",Arial,Helvetica,sans-serif;
+    font-size: 100%;
+    background: #fff;
+    color: #817c7c;
+    line-height: 1.5;
+}
+
+* {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    line-height: 1.8;
+}
+
+.article-content {
+    padding: 1.5em 4% 5em;
+    color: #413f3f;
+    font-size: 100%;
+}
+
+caption,th,td {
+    text-align: left;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+a img {
+    border: none;
+}
+
+small {
+    font-size: 80%;
+}
+
+sub,sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -.5em;
+    padding-left: .3em;
+}
+
+sub {
+    bottom: -.25em;
+}
+
+a {
+    text-decoration: none;
+    color: #2ca6cb;
+}
+
+a:hover {
+    color: #d14;
+}
+
+h1 {
+    font-size: 200%;
+    line-height: 1.5em;
+    padding-bottom: .3em;
+    border-bottom: 2px solid #dbdbdb;
+}
+
+h2 {
+    padding-left: 20px;
+    font-size: 160%;
+    line-height: 1.2em;
+    border-left: 4px solid #2ca6cb;
+}
+
+h3 {
+    font-size: 150%;
+    line-height: 1em;
+    margin-top: 1.3em;
+}
+
+h1, h2 {
+    position: relative;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+}
+
+h4, h5, h6 {
+    font-size: 130%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1 >code, h2 >code, h3 >code, h4 >code, h5 >code, h6 >code {
+    color: #a3a3a3;
+}
+
+hr {
+    border: 1px solid #dbdbdb;
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+acronym, abbr {
+    border-bottom: 1px dotted;
+}
+
+blockquote {
+    border-left: .2em solid #aaa;
+    margin: 1em;
+    padding: .7em;
+    line-height: 1.5;
+    font-size: 100%;
+    color: #808080;
+    background-color: #f8f8f8;
+}
+
+blockquote footer {
+    background: #fafafa;
+    padding: 0;
+    margin: 0;
+    font-size: 80%;
+    line-height: 1em;
+}
+
+blockquote cite {
+    font-style: italic;
+    padding-left: .5em;
+}
+
+blockquote p {
+    margin: 0;
+}
+
+ul, ol {
+    list-style: none;
+    padding-left: 3em;
+    font-size: 105%;
+    padding-top: .7em;
+}
+
+ul li {
+    list-style: disc;
+    text-align: match-parent;
+}
+
+ol li {
+    list-style-type: decimal;
+}
+
+dl dt {
+    font-weight: blod;
+}
+
+ul li>code, ol li>code, p code, strong code, em code, table th>code, table td>code {
+    font-family: Monaco,Menlo,Consolas,Courier New,monospace;
+    background: #eee;
+    color: #d14;
+    border: 1px solid #d6d6d6;
+    padding: 0 5px;
+    margin: 0 2px;
+    font-size: 90%;
+    white-space: nowrap;
+    text-shadow: 0 1px #fff;
+    -webkit-border-radius: .25em;
+    -webkit-border-radius: .25em;
+    border-radius: .25em;
+}
+
+p {
+    line-height: 1.5;
+    margin-top: .7em;
+    font-size: 110%;
+    letter-spacing: 1px;
+}
+
+p.image-wrapper {
+    text-align: center;
+}
+
+img, video, figure img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    margin-top: .5em;
+
+    border-radius: 5px;
+    box-shadow: 2px 2px 7px 1px #aaa;
+}
+
+table {    
+    vertical-align: middle;
+    max-width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 1em;
+    border: 2px solid #cbcbcb;
+    color: #413f3f;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #f8f8f8;
+}
+
+table th {
+    font-weight: bold;
+    border: 1px solid #cbcbcb;
+    border-bottom: 2px solid #cbcbcb;
+    padding: .8em;
+    line-height: 1.3em;
+}
+
+table td {
+    border: 1px solid #cbcbcb;
+    padding: .8em;
+    line-height: 1.3em;
+}
+
+pre {
+    background: #2d2d2d;
+    margin: .5em 0;
+    padding: .5em 2%;
+    color: #ccc;
+    line-height: 1.5;
+    font-size: .8em;
+    -webkit-border-radius: .35em;
+    -webkit-border-radius: .35em;
+    border-radius: .35em;
+    word-wrap: break-word;
+    font-family: Monaco,Menlo,Consolas,Courier New,monospace;
+    overflow-x: auto;
+}
+
+
+pre::-webkit-scrollbar, pre::-webkit-scrollbar-track {
+    height: 8px;
+    background-color: transparent;
+}
+pre::-webkit-scrollbar-thumb {
+    height: 8px;
+    background-color: #ddd;
+    border-radius: 4px;
+}
+
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="article-content">
+        <h1 id="ejs-">ejs模板引擎语法</h1>
+<p>github地址：<a href="https://github.com/tj/ejs">https://github.com/tj/ejs</a></p>
+<h2 id="-">表格测试</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">头1</th>
+<th style="text-align:center">头2</th>
+<th style="text-align:right">头3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">测试</td>
+<td style="text-align:center">测试</td>
+<td style="text-align:right">测试</td>
+</tr>
+<tr>
+<td style="text-align:left">测试测试测试测试</td>
+<td style="text-align:center">测试测试测试测试</td>
+<td style="text-align:right">测试测试测试测试</td>
+</tr>
+</tbody>
+</table>
+<h2 id="-">图片测试</h2>
+<p><p class="image-wrapper"><img src="./test.jpg" alt="null" title="null"></p></p>
+<h2 id="-">测试有序列表</h2>
+<ol>
+<li>哈哈哈</li>
+<li>嗬嗬嗬</li>
+</ol>
+<h2 id="-">测试引用</h2>
+<blockquote>
+<p>今天天气不错今天天气不错今天天气不错今天天气不错今天天气不错今天天气不错今天天气不错今天天气不错</p>
+</blockquote>
+<pre><code>假如代码太长假如代码太长假如代码太长假如代码太长假如代码太长假如代码太长假如代码太长假如代码太长假如代码太长假如代码太长假如代码太长假如代码太长假如代码太长假如代码太长假如代码太长假如代码太长假如代码太长假如代码太长假如代码太长假如代码太长假如代码太长假如代码太长
+</code></pre><h2 id="-">介绍</h2>
+<p>ejs是一种简单实用的<strong>模板引擎</strong>，在前端或者后端（nodejs）均可以使用。其语法类似jsp和php，可以在html代码中编写js代码，从而生成对应的html文件。</p>
+<h2 id="-">例子</h2>
+<pre><code class="lang-html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">%</span></span></span><span class="ruby"> <span class="hljs-keyword">if</span> (user) { </span><span class="xml"><span class="hljs-tag">%&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">%=</span></span></span><span class="ruby"> user.name </span><span class="xml"><span class="hljs-tag">%&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">%</span></span></span><span class="ruby"> } </span><span class="xml"><span class="hljs-tag">%&gt;</span></span>
+</code></pre>
+<h2 id="-">用法</h2>
+<pre><code class="lang-javascript">ejs.<span class="hljs-keyword">compile</span>(str, <span class="hljs-keyword">options</span>);
+<span class="hljs-comment">// =&gt; Function</span>
+
+ejs.render(str, <span class="hljs-keyword">options</span>);
+<span class="hljs-comment">// =&gt; str</span>
+</code></pre>
+<p>其中<code>options</code>中可配置项有：</p>
+<ul>
+<li><code>cache</code>： 编译好的模板函数会被缓存，需要传入<code>filename</code></li>
+<li><code>filename</code>： 和<code>cache</code>一起使用，作为缓存时的键值</li>
+<li><code>context</code>： 编译后生成的模板函数执行上下文</li>
+<li><code>compileDebug</code>： 当值为<code>false</code>不编译调试器，否则会跟踪编译信息</li>
+<li><code>client</code>： 是否返回独立编译函数</li>
+<li><code>debug</code>： 输出生成的函数体</li>
+<li><code>open</code>： 自定义开始标签</li>
+<li><code>close</code>：  自定义结束标签</li>
+<li>其他添加的参数均为模板参数</li>
+</ul>
+<h2 id="-">语法</h2>
+<ul>
+<li>&lt;% %&gt;： 用于js控制流，没有输出</li>
+<li>&lt;%= %&gt;： 输出转义的值到模板中</li>
+<li>&lt;%- %&gt;： 输出不转义的值到模板中</li>
+<li>&lt;%# %&gt;： 注释语句</li>
+<li>&lt;%%： 输出&#39;&lt;%&#39;的文本，相当于&#39;&lt;%&#39;的转义形式</li>
+<li>&lt;% -%&gt;或&lt;%= -%&gt;或&lt;%- -%&gt;： 修剪掉换行符</li>
+</ul>
+<h2 id="-">包含其他模板</h2>
+<p>使用include指令可以把其他模板包含进来。 (这个要求 &#39;filename&#39; 选项。)举个例子，你如果你已经有了 &quot;./views/users.ejs&quot; 和 &quot;./views/user/show.ejs&quot;这个两个模板，你可以在users.ejs中用include指令把show.ejs包含到users.ejs中，如：</p>
+<pre><code class="lang-html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">%</span></span></span><span class="ruby"> <span class="hljs-keyword">include</span> user/show </span><span class="xml"><span class="hljs-tag">%&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+</code></pre>
+<p>在编译之后并不会产生io操作，所有模板都是在编译时包含进来，因此他们可以共享变量。</p>
+<h2 id="-">自定义分隔符</h2>
+<p>自定义分割符号可以应用在一个模板中，或者是全局范围内。</p>
+<pre><code class="lang-javascript">var ejs =require(<span class="hljs-string">'ejs'</span>),
+    users = [<span class="hljs-string">'geddy'</span>, <span class="hljs-string">'neil'</span>, <span class="hljs-string">'alex'</span>];
+
+ejs.render(<span class="hljs-string">'??= users.join(" | "); ??'</span>, {<span class="hljs-string">users:</span> users}, {<span class="hljs-string">open:</span><span class="hljs-string">'??'</span>,<span class="hljs-string">close:</span><span class="hljs-string">'??'</span>});  <span class="hljs-comment">// =&gt; 'geddy | neil | alex'</span>
+
+<span class="hljs-comment">// 或者</span>
+
+ejs.delimiter =<span class="hljs-string">'$'</span>;
+ejs.render(<span class="hljs-string">'$= users.join(" | "); $'</span>, {<span class="hljs-string">users:</span> users});  <span class="hljs-comment">// =&gt; 'geddy | neil | alex'</span>
+</code></pre>
+<h2 id="-">过滤器</h2>
+<h3 id="-">使用</h3>
+<p>针对插入的变量可以使用过滤器对插值进行修饰，使用过滤器的方式如下：</p>
+<pre><code class="lang-html"><span class="xml"><span class="hljs-comment">&lt;!-- users = [{ name: 'tj' }, { name: 'mape' }, { name: 'guillermo' }] --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">%=</span></span></span><span class="perl">: users | <span class="hljs-keyword">map</span>:<span class="hljs-string">'name'</span> | <span class="hljs-keyword">join</span> </span><span class="xml"><span class="hljs-tag">%&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+</code></pre>
+<p>输出：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Tj, Mape, Guillermo<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<h3 id="-">支持的过滤器</h3>
+<ul>
+<li>first：取数组第一个元素</li>
+<li>last：取数组最后一个元素</li>
+<li>capitalize：返回首字母大写的字符串</li>
+<li>downcase：小写转换</li>
+<li>upcase：大写转换</li>
+<li>sort：排序</li>
+<li>sort_by:&#39;prop&#39;：安卓某属性排序</li>
+<li>size：返回数组长度</li>
+<li>length：返回字符串长度</li>
+<li>plus:n：加上n</li>
+<li>minus:n：减去n</li>
+<li>times:n：乘以n</li>
+<li>divided_by:n：除以n</li>
+<li>join:&#39;val&#39;：连接字符串</li>
+<li>truncate:n：截取前n个字符</li>
+<li>truncate_words:n：截取前n个单词</li>
+<li>replace:pattern,substitution：字符串替换</li>
+<li>prepend:val：合并，并追加在前面</li>
+<li>append:val：合并，并追加在后面</li>
+<li>map:&#39;prop&#39;：返回数组中由属性prop的值组成的数组</li>
+<li>reverse：逆序排列</li>
+<li>get:&#39;prop&#39;：取属性值</li>
+</ul>
+<h3 id="-">添加自定义过滤器</h3>
+<pre><code class="lang-javascript">ejs.filters.last = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(obj)</span> </span>{
+  <span class="hljs-keyword">return</span> obj[obj.length - <span class="hljs-number">1</span>];
+};
+</code></pre>
+          
+    </div>
+</div>
+</body>
+</html>

@@ -13,6 +13,7 @@ const helpInfo = `
     -v, --version                输出版本信息
     -w, --watch                  监听markdown文件变化
     -c <cssPath>                 自定义样式
+    -o <htmlPath>                自定义输出文件
 `;
 
 class Args {
@@ -20,12 +21,14 @@ class Args {
     this.args = args;
     this.filePath = '';
     this.cssPath = '';
+    this.outputPath = '';
 
     this.commandMap = {
       help: false,
       version: false,
       watch: false,
-      css: false
+      css: false,
+      output: false
     };
 
     this.previewer = new Previewer();
@@ -65,6 +68,12 @@ class Args {
           if(nextArg && path.extname(nextArg) === '.css') {
             this.commandMap.css = true;
             this.cssPath = nextArg
+          }
+          break;
+        case '-o':
+          if(nextArg && path.extname(nextArg) === '.html') {
+            this.commandMap.output = true;
+            this.outputPath = nextArg
           }
           break;
         case '-w':
@@ -120,6 +129,11 @@ class Args {
   // 自定义样式
   css() {
     this.previewer.setCssPath(this.cssPath);
+  }
+
+  // 自定义输出文件
+  output() {
+    this.previewer.setOutputPath(this.outputPath);
   }
 }
 
