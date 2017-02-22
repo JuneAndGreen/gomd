@@ -30,6 +30,7 @@ body \{
     margin: 0 auto;
     overflow: hidden;
     line-height: 1.8;
+    font-size: 14px;
 \}
 
 .article-content \{
@@ -85,14 +86,19 @@ h1 \{
 \}
 
 h2 \{
+    margin-top: 2.6em;
     padding-left: 20px;
     font-size: 160%;
     line-height: 1.2em;
     border-left: 4px solid #2ca6cb;
 \}
 
+h2:first-child \{
+  margin-top: 1.5em;
+\}
+
 h3 \{
-    font-size: 150%;
+    font-size: 140%;
     line-height: 1em;
     margin-top: 1.3em;
 \}
@@ -101,6 +107,11 @@ h1, h2 \{
     position: relative;
     margin-top: 1.5em;
     margin-bottom: 1em;
+\}
+
+h4 \{
+  font-weight: bold;
+  font-size: 110%;
 \}
 
 h4, h5, h6 \{
@@ -204,10 +215,11 @@ p \{
 \}
 
 p.image-wrapper \{
-    text-align: center;
+    text-align: left;
 \}
 
 img, video, figure img \{
+    margin: 10px 0;
     max-width: 100%;
     height: auto;
     vertical-align: middle;
