@@ -4,7 +4,7 @@
   "description": "markdown previewer",
   "main": "index.js",
   "bin": {
-    "gomd": "./index.js"
+    "gomd": "./src/cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

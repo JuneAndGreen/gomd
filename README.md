@@ -5,10 +5,30 @@
 ## 安装
 
 ```bash
+npm install --save gomd
+```
+
+或
+
+```bash
 npm install -g gomd
 ```
 
-## 使用
+## 使用方式1
+
+```js
+const gomd = require('gomd');
+
+gomd({
+    watch: true, // 是否监听markdown文件变化
+    input: 'xxx', // 输入markdown文件路径
+    output: 'xxx', // 输出html文件路径
+    css: 'xxx', // 自定义样式路径
+})
+
+```
+
+## 使用方式2
 
 ```
   Usage: gomd [options] <filePath>
