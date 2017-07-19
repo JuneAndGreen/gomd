@@ -11,123 +11,141 @@ const renderer = new marked.Renderer();
 
 // 重写渲染图片方法
 renderer.image = function(href, title, text) {
-  return `<p class="image-wrapper"><img src="${href}" alt="${title}" title="${title}"></p>`;
+    return `<p class="image-wrapper"><img src="${href}" alt="${title}" title="${title}"></p>`;
 };
 
 marked.setOptions({
-  renderer,
-  highlight: function(code) {
-    return highlight.highlightAuto(code).value;
-  }
+    renderer,
+    highlight: function(code) {
+        return highlight.highlightAuto(code).value;
+    }
 });
 
-const htmlTemplate = fs.readFileSync(path.join(__dirname, './template.html'), 'utf8');
-const cssTemplate = fs.readFileSync(path.join(__dirname, './template.css'), 'utf8');
-const htmlFunc = parse(htmlTemplate);
-const cssFunc = parse(cssTemplate);
+let htmlTemplate = fs.readFileSync(path.join(__dirname, './template.html'), 'utf8');
+let cssTemplate = fs.readFileSync(path.join(__dirname, './template.css'), 'utf8');
+let htmlFunc = parse(htmlTemplate);
+let cssFunc = parse(cssTemplate);
 
 // 补全路径
 function formatPath(filePath) {
-  if(filePath.indexOf('/') === -1 && filePath.indexOf('\\') === -1) {
-    return `./${filePath}`;
-  } else {
-    return filePath;
-  }
+    if(filePath.indexOf('/') === -1 && filePath.indexOf('\\') === -1) {
+        return `./${filePath}`;
+    } else {
+        return filePath;
+    }
 }
 
 // 是否是绝对路径
 function isAbsolute(filePath) {
-  return filePath.indexOf('.') !== 0; 
+    return filePath.indexOf('.') !== 0; 
 }
 
 class Previewer {
-  constructor(filePath) {
-    this.dir = process.cwd();
-    this.filePath = '';
-    this.watch = false;
-    this.cssPath = '';
-    this.outputPath = '';
-  }
-
-  setFilePath(filePath) {
-    filePath = formatPath(filePath);
-
-    if(isAbsolute(filePath)) {
-      this.filePath = filePath;
-    } else {
-      this.filePath = path.join(this.dir, filePath || '');
-    }
-  }
-
-  setWatch(watch) {
-    this.watch = !!watch;
-  }
-
-  setCssPath(cssPath) {
-    cssPath = formatPath(cssPath);
-
-    if(isAbsolute(cssPath)) {
-      this.cssPath = cssPath;
-    } else {
-      this.cssPath = path.join(this.dir, cssPath || '');
-    }
-  }
-
-  setOutputPath(outputPath) {
-    outputPath = formatPath(outputPath);
-
-    if(isAbsolute(outputPath)) {
-      this.outputPath = outputPath;
-    } else {
-      this.outputPath = path.join(this.dir, outputPath || '');
-    }
-  }
-
-  do() {
-    if(!this.filePath) return;
-
-    if(this.watch) {
-      this.render();
-      if(this.filePath) this.watchFile(this.filePath);
-      if(this.cssPath) this.watchFile(this.cssPath);
-    } else {
-      this.render();
-    }
-  }
-
-  watchFile(filePath) {
-    fs.watch(filePath, (event) => {
-      if(event === 'change') {
-        console.log(`文件变化：${filePath}`);
-
-        this.render();
-      }
-    });
-  }
-
-  render() {
-    let text = fs.readFileSync(this.filePath, 'utf8');
-    let html = marked(text);
-
-    let css = '';
-    if(this.cssPath) {
-      css = fs.readFileSync(this.cssPath, 'utf8');
+    constructor(filePath) {
+        this.dir = process.cwd();
+        this.filePath = '';
+        this.watch = false;
+        this.cssPath = '';
+        this.outputPath = '';
     }
 
-    css = cssFunc({
-      css
-    })
+    setFilePath(filePath) {
+        filePath = formatPath(filePath);
 
-    html = htmlFunc({
-      css,
-      html
-    });
+        if(isAbsolute(filePath)) {
+            this.filePath = filePath;
+        } else {
+            this.filePath = path.join(this.dir, filePath || '');
+        }
+    }
 
-    let outputPath = this.outputPath || path.join(path.dirname(this.filePath), path.basename(this.filePath, '.md')) + '.html';
-    fs.writeFileSync(outputPath, html);
+    setWatch(watch) {
+        this.watch = !!watch;
+    }
 
-    console.log('生成html文件：' + outputPath);
-  }
+    setCssPath(cssPath) {
+        cssPath = formatPath(cssPath);
+
+        if(isAbsolute(cssPath)) {
+            this.cssPath = cssPath;
+        } else {
+            this.cssPath = path.join(this.dir, cssPath || '');
+        }
+    }
+
+    setOutputPath(outputPath) {
+        outputPath = formatPath(outputPath);
+
+        if(isAbsolute(outputPath)) {
+            this.outputPath = outputPath;
+        } else {
+            this.outputPath = path.join(this.dir, outputPath || '');
+        }
+    }
+
+    setTemplate(templatePath) {
+        templatePath = formatPath(templatePath);
+
+        if(isAbsolute(templatePath)) {
+            this.templatePath = templatePath;
+        } else {
+            this.templatePath = path.join(this.dir, templatePath || '');
+        }
+
+        htmlTemplate = fs.readFileSync(this.templatePath, 'utf8');
+        htmlFunc = parse(htmlTemplate);
+    }
+
+    setTitle(title) {
+        this.title = title;
+    }
+
+    do() {
+        if(!this.filePath) return;
+
+        if(this.watch) {
+            this.render();
+            if(this.filePath) this.watchFile(this.filePath);
+            if(this.cssPath) this.watchFile(this.cssPath);
+        } else {
+            this.render();
+        }
+    }
+
+    watchFile(filePath) {
+        fs.watch(filePath, (event) => {
+            if(event === 'change') {
+                console.log(`文件变化：${filePath}`);
+
+                this.render();
+            }
+        });
+    }
+
+    render() {
+        let text = fs.readFileSync(this.filePath, 'utf8');
+        let html = marked(text);
+
+        let css = '';
+        if(this.cssPath) {
+            css = fs.readFileSync(this.cssPath, 'utf8');
+        }
+
+        css = cssFunc({
+            css
+        })
+
+        html = htmlFunc({
+            css,
+            html,
+            title: this.title || 'demo'
+        });
+
+        let outputPath = this.outputPath || path.join(path.dirname(this.filePath), path.basename(this.filePath, '.md')) + '.html';
+        fs.writeFileSync(outputPath, html);
+
+        console.log('生成html文件：' + outputPath);
+    }
 
 };
 
