@@ -1,6 +1,6 @@
 {
   "name": "gomd",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "markdown previewer",
   "main": "index.js",
   "bin": {
@@ -20,8 +20,9 @@
   "author": "june_01",
   "license": "MIT",
   "dependencies": {
+    "easycmd": "latest",
     "highlight.js": "^9.9.0",
     "marked": "^0.3.6",
-    "tooltpl": "0.0.1"
+    "tooltpl": "latest"
   }
 }
