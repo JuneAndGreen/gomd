@@ -43,7 +43,9 @@ class Args {
             if (cmd.alias && this['_' + cmd.alias]) this['_' + cmd.alias](cmd.value);
         });
 
-        this.previewer.setFilePath(result.params[0]);
+        if (!params.length) return;
+
+        this.previewer.setFilePath(params[0]);
         this.previewer.do();
     }
 
